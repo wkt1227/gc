@@ -165,3 +165,6 @@ tags
 [._]*.un~
 
 # *** Project ***
+data/galaxy-img
+data/galaxy-patch
+data/result/galaxycluster

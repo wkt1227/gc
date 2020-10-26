@@ -13,8 +13,8 @@ DEG_CORRESPONDING_TO_5S = 0.00138889
 def main():
     gz_table = Table.read('../data/GalaxyZoo1_DR_table2.fits')
 
-    # Galaxy Zooの表の上から 1000行目までを順に取り出す
-    for galaxy_info in gz_table[:10]:
+    # Galaxy Zooの表の上から n行目までを順に取り出す
+    for galaxy_info in gz_table[:1000]:
 
         # Galaxy Zooの表からobjid, ra, decを取り出す
         objid = galaxy_info[0]
@@ -48,7 +48,7 @@ def main():
         # 得られた座標を中心として画像を切り出し、保存する
         r = 50
         img_galaxy = data[py-r:py+r, px-r:px+r]
-        plt.title('RA = {}, Dec = {}'.format(ra_hms, dec_hms))
+        plt.title('RA = {}, Dec = {}, ({}, {})'.format(ra_hms, dec_hms, px, py))
         plt.imshow(np.log10(img_galaxy.T[::-1, ::-1]), cmap='gray', vmin=3.05, vmax=3.09)
 
         # 画像上で5秒角に対応する長さの線を描画する
