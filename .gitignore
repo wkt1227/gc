@@ -168,3 +168,6 @@ tags
 data/galaxy-img
 data/galaxy-patch
 data/result/galaxycluster
+data/galaxy_fits_name_in_gz.npy
+data/GalaxyZoo1_DR_table2.fits
+data/result/patch_features.npy

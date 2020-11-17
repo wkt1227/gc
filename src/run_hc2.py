@@ -1,7 +1,7 @@
 # coding: UTF-8
 import numpy as np
 import matplotlib.pyplot as plt
-from scipy.cluster.hierarchy import dendrogram, fcluster, centroid
+from scipy.cluster.hierarchy import dendrogram, fcluster, centroid, single, complete, average, weighted, median, ward
 from scipy.spatial.distance import pdist
 
 

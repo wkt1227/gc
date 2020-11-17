@@ -15,7 +15,8 @@ if __name__ == "__main__":
         patches = np.load(path)
 
         for patch in patches:
-            patch_feature = get_psd1d(get_psd2d(patch))
+            # patch_feature = get_psd1d(get_psd2d(patch)) # radially average
+            patch_feature = get_psd2d(patch).flatten() # radially average を取らない
             patch_features.append(patch_feature)
             patch_labels.append(label_cursor)
 

@@ -3,8 +3,27 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import cm
 from mpl_toolkits.mplot3d import Axes3D
-from scipy.cluster.hierarchy import dendrogram, fcluster, centroid
+from scipy.cluster.hierarchy import dendrogram, fcluster, centroid, ward
 from scipy.spatial.distance import pdist
+
+
+# def findNearestVector(i, gng_input):
+#     nearest_idx = 0
+#     dist = 0
+#     v = gng_input[i]
+
+#     for j, u in enumerate(gng_output):
+#         tmp_dist = np.linalg.norm(v-u)
+
+#         if j == 0:
+#             dist = tmp_dist
+#             continue
+
+#         if tmp_dist < dist:
+#             dist = tmp_dist
+#             nearest_idx = j
+
+#     patch_labels2.append(cl[nearest_idx])
 
 
 if __name__ == "__main__":
