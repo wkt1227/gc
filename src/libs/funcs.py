@@ -2,6 +2,7 @@ import numpy as np
 from scipy import ndimage
 from pydl.photoop.photoobj import unwrap_objid
 import requests
+import mahotas
 
 
 # 画像からパワースペクトルを計算する
@@ -68,3 +69,9 @@ def download_sdss_img(file_name, ra, dec, width, height, opt=''):
     if response.status_code == 200:
         with open(file_name, 'wb') as f:
             f.write(response.content)
+
+
+
+def get_zernikemoments_from_img(img, radius=10):
+    value = mahotas.features.zernike_moments(img, radius)
+    return value
