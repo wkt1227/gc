@@ -1,0 +1,17 @@
+楕円銀河の数: 1000個
+渦巻銀河の数: 1000個
+
+sample vectorの数: 1192721個
+
+gngのnode数: 1000個
+gngのedge最大年齢: 70
+
+patch size: 12*12
+
+sample vector: radially averageを取らない
+sample vectorの正規化: 要素ごと
+
+hcの閾値: 最大200個
+hcの手法: ward
+
+hc2の手法: ward
