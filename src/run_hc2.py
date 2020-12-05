@@ -3,13 +3,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.cluster.hierarchy import dendrogram, fcluster, centroid, single, complete, average, weighted, median, ward
 from scipy.spatial.distance import pdist
+import sys
 
 
 if __name__ == "__main__":
     galaxy_vectors = np.load('../data/result/galaxy_vectors.npy')
 
-    Z = centroid(pdist(galaxy_vectors, 'correlation'))
-    maxclust = 50
+    Z = ward(pdist(galaxy_vectors, 'correlation'))
+    try:
+        maxclust = int(sys.argv[1])    
+    except IndexError:
+        maxclust = 2
     ct = Z[-(maxclust-1), 2]
     cl = fcluster(Z, maxclust, criterion='maxclust')
     plt.axhline(ct, linestyle='--', c='purple')

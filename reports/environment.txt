@@ -11,7 +11,7 @@ patch size: 12*12
 sample vector: radially averageを取らない
 sample vectorの正規化: 要素ごと
 
-hcの閾値: 0.045
-hcの手法: centroid
+hcの閾値: 最大200個
+hcの手法: ward
 
 hc2の手法: ward
