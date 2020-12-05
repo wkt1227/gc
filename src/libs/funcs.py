@@ -2,7 +2,9 @@ import numpy as np
 from scipy import ndimage
 from pydl.photoop.photoobj import unwrap_objid
 import requests
+import xml.etree.ElementTree as ET
 import mahotas
+
 
 
 # 画像からパワースペクトルを計算する
@@ -75,3 +77,17 @@ def download_sdss_img(file_name, ra, dec, width, height, opt=''):
 def get_zernikemoments_from_img(img, radius=10):
     value = mahotas.features.zernike_moments(img, radius)
     return value
+
+
+
+def get_z_from_objid(objid):
+    sqlCmd = f'SELECT * FROM SpecObjAll WHERE bestObjId={objid}'
+    response = requests.post(
+        'http://skyserver.sdss.org/dr7/en/tools/search/x_sql.asp',
+        {
+            'format': 'xml',
+            'cmd': sqlCmd,
+        }
+    )
+    root = ET.fromstring(response.text)
+    return root[1][0].attrib['z'] 
