@@ -2,6 +2,7 @@ import numpy as np
 from scipy import ndimage
 from pydl.photoop.photoobj import unwrap_objid
 import requests
+import xml.etree.ElementTree as ET
 
 
 # 画像からパワースペクトルを計算する
@@ -68,3 +69,17 @@ def download_sdss_img(file_name, ra, dec, width, height, opt=''):
     if response.status_code == 200:
         with open(file_name, 'wb') as f:
             f.write(response.content)
+
+
+
+def get_z_from_objid(objid):
+    sqlCmd = f'SELECT * FROM SpecObjAll WHERE bestObjId={objid}'
+    response = requests.post(
+        'http://skyserver.sdss.org/dr7/en/tools/search/x_sql.asp',
+        {
+            'format': 'xml',
+            'cmd': sqlCmd,
+        }
+    )
+    root = ET.fromstring(response.text)
+    return root[1][0].attrib['z'] 
