@@ -169,5 +169,3 @@ data/galaxy-img
 data/galaxy-patch
 data/result/galaxycluster
 data/result/patch_features.npy
-
-src/line.sh
