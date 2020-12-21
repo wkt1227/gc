@@ -56,5 +56,5 @@ if __name__ == "__main__":
     ax.set_xlabel('sample vector[0]')
     ax.set_ylabel('sample vector[1]')
     ax.set_zlabel('sample vector[2]')
-    plt.savefig('../reports/gng_result' + ' input:{}, output:{}'.format(len(patch_features), len(gng.graph.nodes)))
+    plt.savefig('../reports/gng_result' + '_input:{},_output:{}'.format(len(patch_features), len(gng.graph.nodes)))
     plt.close()
