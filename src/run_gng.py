@@ -20,7 +20,8 @@ if __name__ == "__main__":
         
         # max_edge_age=280,
         max_nodes=1000,
-        max_edge_age=280,
+        # max_nodes=10000,
+        max_edge_age=70,
         # max_nodes=250,
         n_iter_before_neuron_added=200,
 
@@ -30,6 +31,7 @@ if __name__ == "__main__":
     )
 
     gng.train(patch_features, epochs=20)
+    # gng.train(patch_features, epochs=3)
 
     gng_result = []
 

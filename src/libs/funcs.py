@@ -137,7 +137,7 @@ def get_z_from_objid2(objid):
     # s2 = m1[1]
     # m2 = re.search('specObjId=(.*?)&', s2)
     # specObjId = m2[1]
-    m = re.search('href="(.*?)"', html1)
+    m = re.search('specObjId=(.*?)&', html1)
     specObjId = m[1]
 
     # 取得したspecObjIdの行をSpecObjAllから取ってくる。

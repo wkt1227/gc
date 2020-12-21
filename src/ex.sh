@@ -1,6 +1,8 @@
 #!/bin/bash
 nums1=(500 400 300 200 100 50 25)
 nums2=(2 4 6 8 10 50 100)
+# nums1=(500 400 300 200 100)
+# nums2=(2 4 6 8 10 50)
 for i in ${nums1[@]};do echo "- ${i}, centroid"
     python run_hc.py c $i
     python gng_hc_clustering_multi.py

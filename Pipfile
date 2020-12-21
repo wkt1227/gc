@@ -19,6 +19,7 @@ pydl = "*"
 astroquery = "*"
 mahotas = "*"
 importlib-metadata = "==1.7.0"
+jupyter = "*"
 
 [requires]
 python_version = "3.6"

@@ -167,5 +167,6 @@ tags
 # *** Project ***
 data/galaxy-img
 data/galaxy-patch
+data/galaxy-patch2
 data/result/galaxycluster
 data/result/patch_features.npy
