@@ -114,7 +114,6 @@ def get_z_from_objid(objid):
         # zを探して、返す。
         return float(root[1][0].attrib['z'])
     except KeyError:  # bestObjIdとobjidが一致しない場合
-        print(objid)
         return get_z_from_objid2(objid)
 
 
@@ -153,4 +152,7 @@ def get_z_from_objid2(objid):
     )
     root = ET.fromstring(response2.text)
     # zを探して、返す。
-    return float(root[1][0].attrib['z'])
+    try:
+        return float(root[1][0].attrib['z'])
+    except KeyError:
+        print(objid, specObjId)
